@@ -1,0 +1,32 @@
+﻿<div>
+    <div>Count: {{typeListInfo.count}}</div>
+    <div>Next page URL: {{typeListInfo.next}}</div>
+
+    Order:
+    <select ng-model="repoSortOrder">
+        <option value="name">name</option>
+        <option value="mass">mass</option>
+        <option value="height">height</option>
+    </select>
+    <select ng-model="repoSortOrderType">
+        <option value="">asc</option>
+        <option value="1">desc</option>
+    </select>
+</div>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>mass</th>
+            <th>height</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="instance in instances | orderBy:repoSortOrder:repoSortOrderType">
+            <td><a href="#/film/{{type}}/{{instance.id}}">{{instance.name}}</a></td>
+            <td>{{instance.mass}}</td>
+            <td>{{instance.height}}</td>
+        </tr>
+    </tbody>
+</table>
+<a href="#/main">Back to search</a>

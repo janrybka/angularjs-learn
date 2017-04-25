@@ -1,0 +1,21 @@
+﻿<div>
+    <div>Name: {{userFilms.name}}</div>
+    <div>Hair color: {{userFilms.hair_color}}</div>
+</div>
+<table>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Release Date</th>
+            <th>Director</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="film in userFilms.films">
+            <td>{{film.title || 'loading ...'}}</td>
+            <td>{{film.release_date || 'asdf'}}</td>
+            <td>{{film.director || 'asdf'}}</td>
+        </tr>
+    </tbody>
+</table>
+<a href="#/user/{{type}}">Back to search</a>

@@ -1,0 +1,9 @@
+﻿<div>
+    <p ng-if="countdown">Countdown: {{countdown}}</p>
+    <form name="searchUser" ng-submit="search(type)">
+        <input type='search' required placeholder="type to find" ng-model="type" />
+        <button type='submit'>Search</button>
+    </form>
+
+    <div id="details" ng-include="'userdetails.html'" ng-if="typeListInfo"></div>
+</div>
